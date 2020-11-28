@@ -1,6 +1,6 @@
 # RusTollens - Type-level Boolean for Logic
 
-A small and experimental Rust library with a type-level representation of booleans with companion connectives for compile-time sort-of fun.
+A small and experimental Rust library with a type-level representation of booleans with companion connectives for compile-time sort-of fun with logic.
 
 ```rust
 type Tollens<P, Q> = Imp<And<Imp<P, Q>, Not<Q>>, Not<P>>;
@@ -9,7 +9,7 @@ fn what_is_reality<T: Truth>() {}
 what_is_reality::<Or<True, Not<True>>>();
 ```
 
-The intuition behind is as follows:
+The intuition behind it is as follows:
 
 Consider the trait `Negation`:
 
@@ -51,8 +51,15 @@ trait Conjunction<L> {
 }
 ```
 
-Where we would now need four `impl`s to exhaust the four combinations of `True` and `False`.
+Where we would now need four `impl`s to exhaust the four combinations of `True` and `False`, for instance:
+
+```rust
+impl Conjunction<True> for False {
+    // False AND True IS False
+    type Output = False;
+}
+```
 
 RusTollens builds on top of these ideas to compute simple logical statements at the type-level, statically at compile-time.
 
-Fairly likely not an amazingly applicable library, still the idea of encoding invariants at type-level such that the compiler can check them is powerful. Therefore, this small experiment aims to give some more food for thought and invite the reader to explore and appreciate Rust's type-system to its maximum.
+Fairly likely not an amazingly applicable library, still the idea of encoding invariants at type-level such that the compiler can verify on our behalf them is incredibly powerful. Therefore, this small experiment aims to give some more food for thought and invite the reader to explore and appreciate Rust's type-system to its maximum.

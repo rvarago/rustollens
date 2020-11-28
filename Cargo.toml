@@ -1,6 +1,12 @@
 [package]
 authors = ["Rafael Varago <varago.rafael@gmail.com>"]
-description = "A small and experimental library with a type-level representation of booleans with companion connectives for compile-time sort-of fun"
+categories = ["type-level::logic"]
+description = "A small and experimental library with a type-level representation of booleans with companion connectives for compile-time sort-of fun with logic"
+documentation = "https://docs.rs/rustollens"
 edition = "2018"
+keywords = ["rustollens", "logic", "type-level", "boolean"]
+license = "MIT"
 name = "rustollens"
+readme = "README.md"
+repository = "https://github.com/rvarago/rustollens"
 version = "0.1.0"
