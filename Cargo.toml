@@ -1,6 +1,6 @@
 [package]
 authors = ["Rafael Varago <varago.rafael@gmail.com>"]
-categories = ["type-level::logic"]
+categories = ["science", "rust-patterns"]
 description = "A small and experimental library with a type-level representation of booleans with companion connectives for compile-time sort-of fun with logic"
 documentation = "https://docs.rs/rustollens"
 edition = "2018"
