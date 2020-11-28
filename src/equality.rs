@@ -3,7 +3,7 @@ use super::{
     private::Sealed,
 };
 
-/// Type-level equality.
+/// Type-level Equality.
 pub trait Equality<L>: Sealed {
     /// Whether `Self` equals to `L`.
     type Output;

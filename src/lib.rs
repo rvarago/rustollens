@@ -8,7 +8,7 @@ pub mod boolean;
 /// Logical connectives.
 pub mod connective;
 
-/// Propositional equality of booleans.
+/// Equality of booleans.
 pub mod equality;
 
 mod private;

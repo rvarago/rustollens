@@ -62,4 +62,4 @@ impl Conjunction<True> for False {
 
 RusTollens builds on top of these ideas to compute simple logical statements at the type-level, statically at compile-time.
 
-Fairly likely not an amazingly applicable library, still the idea of encoding invariants at type-level such that the compiler can verify on our behalf them is incredibly powerful. Therefore, this small experiment aims to give some more food for thought and invite the reader to explore and appreciate Rust's type-system to its maximum.
+Fairly likely not an amazingly applicable library, still the idea of encoding invariants at the type-level such that the compiler can verify them on our behalf is incredibly powerful. Therefore, this small experiment aims to give some more food for thought and invite the reader to explore and appreciate Rust's type-system to its maximum.
