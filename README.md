@@ -57,7 +57,7 @@ trait Conjunction<L> {
 }
 ```
 
-Where we would now need four `impl`s to exhaust the four combinations of `True` and `False` for `Self` and `L`, for instance:
+Where we would now need four `impl`s to exhaust the four combinations of `True` and `False` for `Self` and `L`:
 
 ```rust
 impl Conjunction<False> for False {
