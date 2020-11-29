@@ -11,6 +11,13 @@ what_is_reality::<Or<True, Not<True>>>();
 
 The intuition behind it is as follows:
 
+We have two types representing the two possible boolean values:
+
+```rust
+struct True;
+struct False;
+```
+
 Consider the trait `Negation`:
 
 ```rust
@@ -21,12 +28,9 @@ trait Negation {
 
 > Notice the lack of associated functions, it only has an associated *type*.
 
-And the implementation of `Negation` for the types `True` and `False`:
+The implementation of `Negation` for the types `True` and `False`:
 
 ```rust
-struct True;
-struct False;
-
 impl Negation for True {
     type Output = False
 }
@@ -51,13 +55,30 @@ trait Conjunction<L> {
 }
 ```
 
-Where we would now need four `impl`s to exhaust the four combinations of `True` and `False`, for instance:
+Where we would now need four `impl`s to exhaust the four combinations of `True` and `False` for `Self` and `L`, for instance:
 
 ```rust
-impl Conjunction<True> for False {
-    // False AND True IS False
+impl Conjunction<False> for False {
     type Output = False;
 }
+impl Conjunction<True> for False {
+    type Output = False;
+}
+impl Conjunction<False> for True {
+    type Output = False;
+}
+impl Conjunction<True> for True {
+    type Output = True;
+}
+```
+
+In pseudo-code:
+
+```
+conjunction(False, False) = False
+conjunction(True, False) = False
+conjunction(False, True) = False
+conjunction(True, True) = True
 ```
 
 RusTollens builds on top of these ideas to compute simple logical statements at the type-level, statically at compile-time.
