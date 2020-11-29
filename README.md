@@ -2,6 +2,8 @@
 
 A small and experimental Rust library with a type-level representation of booleans with companion connectives for compile-time sort-of fun with logic.
 
+* [Documentation](https://docs.rs/rustollens/0.1.0/rustollens/)
+
 ```rust
 type Tollens<P, Q> = Imp<And<Imp<P, Q>, Not<Q>>, Not<P>>;
 
